@@ -14,6 +14,11 @@ const prevButton = document.querySelector('.carousel-prev');
 const nextButton = document.querySelector('.carousel-next');
 const carouselImgs = carouselSlide.getElementsByTagName('img').length - 1
 
+const buyTrigger = document.getElementById("buy-trigger")
+const buyLater = document.getElementById("buyLater")
+const pricingTable = document.getElementById("pricingTable")
+const blurBg = document.getElementById("blur")
+
 let counter = 0;
 
 function initServerData(serverIp, serverPort) {
@@ -62,11 +67,23 @@ function copyToClipboard(str) {
     document.body.removeChild(el);
 }
 
-
-
 function slideCarousel() {
     carouselSlide.style.transform = `translateX(-${counter * 100}%)`;
 }
+
+function closeBuyModal() {
+    pricingTable.classList.remove("active")
+    blurBg.classList.remove("active")
+}
+
+buyTrigger.addEventListener('click', () => {
+    pricingTable.classList.add("active")
+    blurBg.classList.add("active")
+})
+
+buyLater.addEventListener('click', closeBuyModal)
+
+blurBg.addEventListener('click', closeBuyModal)
 
 prevButton.addEventListener('click', () => {
     if (counter > 0) {
@@ -86,6 +103,14 @@ nextButton.addEventListener('click', () => {
     slideCarousel();
 });
 
+document.addEventListener("scroll", () => {
+    let buyTriggerRect = buyTrigger.getBoundingClientRect()
+    let isInSites = buyTriggerRect.top >= 0 && buyTriggerRect.left >= 0 && buyTriggerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && buyTriggerRect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    if (isInSites === true) {
+        alert("OML IT WORKS")
+    }
+})
+
 setInterval(() => {
     if (counter < carouselImgs) {
         counter++;
@@ -93,7 +118,7 @@ setInterval(() => {
         counter = 0;
     }
     slideCarousel();
-}, 5000)
+}, 10000)
 
 window.onload = () => initServerData(mcip, "25565");
 
