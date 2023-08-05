@@ -15,6 +15,7 @@ const nextButton = document.querySelector('.carousel-next');
 const carouselImgs = carouselSlide.getElementsByTagName('img').length - 1
 
 const buyTrigger = document.getElementById("buy-trigger")
+const buyTriggerAlt = document.getElementById("buy-trigger-alt")
 const buyLater = document.getElementById("buyLater")
 const pricingTable = document.getElementById("pricingTable")
 const blurBg = document.getElementById("blur")
@@ -71,18 +72,20 @@ function slideCarousel() {
     carouselSlide.style.transform = `translateX(-${counter * 100}%)`;
 }
 
+function openBuyModal() {
+    pricingTable.classList.add("active")
+    blurBg.classList.add("active")
+}
+
 function closeBuyModal() {
     pricingTable.classList.remove("active")
     blurBg.classList.remove("active")
 }
 
-buyTrigger.addEventListener('click', () => {
-    pricingTable.classList.add("active")
-    blurBg.classList.add("active")
-})
+buyTrigger.addEventListener('click', openBuyModal)
+buyTriggerAlt.addEventListener('click', openBuyModal)
 
 buyLater.addEventListener('click', closeBuyModal)
-
 blurBg.addEventListener('click', closeBuyModal)
 
 prevButton.addEventListener('click', () => {
@@ -105,9 +108,11 @@ nextButton.addEventListener('click', () => {
 
 document.addEventListener("scroll", () => {
     let buyTriggerRect = buyTrigger.getBoundingClientRect()
-    let isInSites = buyTriggerRect.top >= 0 && buyTriggerRect.left >= 0 && buyTriggerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && buyTriggerRect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    if (isInSites === true) {
-        alert("OML IT WORKS")
+    let isInSites = buyTriggerRect.top >= 0 && buyTriggerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    if (!isInSites && !buyTriggerAlt.classList.contains("active")) {
+        buyTriggerAlt.classList.add("active")
+    } else if (isInSites && buyTriggerAlt.classList.contains("active")) {
+        buyTriggerAlt.classList.remove("active")
     }
 })
 
@@ -120,8 +125,4 @@ setInterval(() => {
     slideCarousel();
 }, 10000)
 
-window.onload = () => initServerData(mcip, "25565");
-
-joinBtn.addEventListener('click', function () {
-    copyToClipboard(mcip);
-});
+// window.onload = () => initServerData(mcip, "25565");
