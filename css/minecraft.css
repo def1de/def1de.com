@@ -62,8 +62,7 @@ header {
 }
 
 header h1 {
-    margin: 0;
-    padding: 10px;
+    margin-bottom: 10px;
 }
 
 nav ul {
@@ -278,13 +277,12 @@ ul.rule-list>li {
 }
 
 @media (max-width: 900px) {
-    .wrapper {
-        flex-direction: column-reverse;
-        align-items: center;
+    .header_inner {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .pricing-table {
-        max-width: 60%;
-        width: 100%;
+    header h1 {
+        text-align: center;
     }
 }
