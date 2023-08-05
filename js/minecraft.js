@@ -35,10 +35,9 @@ function initServerData(serverIp, serverPort) {
         players.innerHTML = data.players.now + "/" + data.players.max
         updated.innerHTML = Math.round((Date.now() - data.last_updated * 1000) / 60000) + " min ago"
 
-        if (data.players.sample.length === 0) {
-            document.querySelectorAll('a[href="#players"]')[0].style.display = "none"
-            document.getElementById("players").style.display = "none"
-        } else {
+        if (data.players.sample.length > 0) {
+            document.querySelectorAll('a[href="#players"]')[0].style.display = ""
+            document.getElementById("players").style.display = ""
             for (const player in data.players.sample) {
                 generatePlayerCard(data.players.sample[player].name)
             }
