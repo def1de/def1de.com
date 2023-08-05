@@ -89,16 +89,15 @@ section {
     text-align: center;
 }
 
-.screenshots {
+.rules-api-wrapper {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: center;
 }
 
-.screenshots img {
-    max-width: 300px;
-    height: auto;
+.api-wrapper {
+    width: 30%;
 }
+
 
 /* PRICING */
 
@@ -120,7 +119,6 @@ section {
 }
 
 .pricing-table.active {
-    /* right: 50%; */
     display: block;
 }
 
@@ -187,7 +185,7 @@ section {
 
 .server-info {
     width: 300px;
-    margin: 50px auto;
+    margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -206,7 +204,6 @@ section {
 
 #player-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 2vmin;
 }
@@ -252,8 +249,6 @@ footer p {
     margin: 0;
     padding: 10px;
 }
-
-/* ========ADDED======= */
 
 /* BUTTONS */
 
@@ -334,5 +329,15 @@ ul.rule-list>li {
 
     header h1 {
         text-align: center;
+    }
+
+    .rules-api-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .api-wrapper {
+        width: 100%;
     }
 }

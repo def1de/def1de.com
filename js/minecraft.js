@@ -20,6 +20,8 @@ const buyLater = document.getElementById("buyLater")
 const pricingTable = document.getElementById("pricingTable")
 const blurBg = document.getElementById("blur")
 
+const textToCypher = document.getElementsByClassName("cyper")
+
 let counter = 0;
 
 function initServerData(serverIp, serverPort) {
@@ -30,15 +32,17 @@ function initServerData(serverIp, serverPort) {
         if (data.status == 'error') {
             return false
         }
-        console.log(data)
         version.innerHTML = data.server.name;
         if (data.online) { mcstatus.innerText = "Online" }
         players.innerHTML = data.players.now + "/" + data.players.max
         updated.innerHTML = Math.round((Date.now() - data.last_updated * 1000) / 60000) + " min ago"
 
         for (const player in data.players.sample) {
-            console.log(player)
             generatePlayerCard(data.players.sample[player].name)
+        }
+
+        for (let i = 0; i < 5; i++) {
+            generatePlayerCard("def1de")
         }
     }
 }
