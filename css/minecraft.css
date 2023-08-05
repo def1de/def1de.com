@@ -362,6 +362,10 @@ ul.rule-list>li {
         width: 100%;
     }
 
+    #player-list {
+        justify-content: center;
+    }
+
     #buy-trigger-alt {
         top: -50px;
         left: 50%;
