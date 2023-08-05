@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/index/minecraft.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.title-img {
+    margin: 50px 0;
+    width: 50%;
+    height: auto;
+}
+
+.main {
+    width: 75%;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main>.buy-wrapper {
+    width: 30%;
+    min-width: 300px;
+    max-width: 500px;
+    border-left: 1px solid black;
+    margin-left: 3vmin;
+}
+
+.buy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3vmin;
+}
+
+.price {
+    display: flex;
+}
+
+.price>h1 {
+    font-size: 7rem;
+}
+
+.price>p {
+    font-size: 3rem;
+}
+
+.price>span {
+    margin-top: auto;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.btn.mcbtn {
+    color: white;
+    background-color: green;
+    aspect-ratio: 4;
+    margin-bottom: 20px;
+    border-color: green;
+    box-sizing: border-box;
+}
+
+.btn.mcbtn:hover {
+    background-color: white;
+    color: green;
+}
+
+.buy>.btn {
+    width: 80%;
+}
+
+.buy>.server-info {
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding-bottom: 2vmin;
+}
+
+.server-info>.data-pair {
+    margin-top: 1vmin;
+}
+
+#player-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.online-title {
+    font-size: 1.5rem;
+    margin-top: 3vmin;
+}
+
+.player-card {
+    padding: 5px;
+    margin: 8px;
+    border: 2px solid black;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.player-card>h3 {
+    font-size: 1.5rem;
+}
+
+.carousel-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-slide {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    max-width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.info>div {
+    margin-bottom: 3vmin;
+}
+
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .main>.buy-wrapper {
+        border: none;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}

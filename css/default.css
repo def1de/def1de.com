@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+.btn {
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    border: solid 2px white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}

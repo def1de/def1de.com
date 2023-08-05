@@ -1,0 +1,211 @@
+body {
+    overflow-x: hidden;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/index/minecraft.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.background {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.screenshots {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.screenshots img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* PRICING */
+
+.pricing-table {
+    min-width: 450px;
+    max-width: 30%;
+}
+
+.permission-level {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid green;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.permission-level>#perm_img {
+    transition: ease .3s;
+}
+
+.permission-level:hover>#perm_img {
+    scale: 0.9;
+    rotate: 8deg;
+}
+
+.permission-level>* {
+    margin-bottom: 1vh;
+}
+
+#perm_img {
+    margin-top: 3vw;
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+#titleImg {
+    position: absolute;
+    width: 18vw;
+    top: -20px;
+    z-index: 10;
+}
+
+/* PLAYER LIST */
+
+.player-list {
+    list-style: none;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+}
+
+/* ========ADDED======= */
+
+/* BUTTONS */
+
+.btn.mcbtn {
+    color: white;
+    width: 80%;
+    max-width: 200 px;
+    background-color: green;
+    aspect-ratio: 6;
+    margin-bottom: 20px;
+    border-color: green;
+    box-sizing: border-box;
+}
+
+.btn.mcbtn:hover {
+    background-color: white;
+    color: green;
+}
+
+/* LAYOUT */
+
+.wrapper {
+    background-color: white;
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2vmin;
+}
+
+#buy {
+    min-width: 500px;
+}
+
+.wrapper .container {
+    padding: 0;
+}
+
+.info {
+    width: 60%;
+}
+
+/* CAROUSEL */
+
+.carousel-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-slide {
+    display: flex;
+    /* height: 100%; */
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    max-width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}

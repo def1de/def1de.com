@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/minecraft.css">
+    <title>def1de - mc</title>
+</head>
+
+<body>
+    <img class="title-img" src="img/minecraft/s2title.png" alt="">
+    <div class="main">
+
+        <!-- INFO SECTION -->
+
+        <div class="info">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="img/minecraft/carousel-1.jpg" alt="Image 1">
+                    <img src="img/minecraft/carousel-2.jpg" alt="Image 2">
+                    <img src="img/minecraft/carousel-3.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-prev btn mcbtn">&#10094;</div>
+                <div class="carousel-next btn mcbtn">&#10095;</div>
+            </div>
+        </div>
+
+        <!-- BUY SECTION -->
+
+        <div class="buy-wrapper">
+            <div class="buy">
+                <h1>JOIN NOW</h1>
+                <div class="price">
+                    <h1>£5</h1>
+                </div>
+                <a href="" class="btn mcbtn">PLACE ORDER</a>
+                <div class="server-info">
+                    <div class="data-pair">
+                        <h2>Version: <span id="mc-ver">Unknown</span></h2>
+                    </div>
+                    <div class="data-pair">
+                        <h2>Status: <span id="mc-status">Offline</span></h2>
+                    </div>
+                    <div class="data-pair">
+                        <h2>Players: <span id="mc-players">0/50</span></h2>
+                    </div>
+                    <div class="data-pair">
+                        <h2>Updated: <span id="mc-updated">Unknown</span></h2>
+                    </div>
+                </div>
+                <h1 class="online-title">ONLINE PLAYERS</h1>
+                <div id="player-list"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="js/minecraft.js"></script>
+
+</html>
