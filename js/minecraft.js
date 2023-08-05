@@ -98,6 +98,8 @@ function closeBuyModal() {
     blurBg.classList.remove("active")
 }
 
+initServerData(mcip, "25565");
+
 buyTrigger.addEventListener('click', openBuyModal)
 buyTriggerAlt.addEventListener('click', openBuyModal)
 
@@ -140,5 +142,3 @@ setInterval(() => {
     }
     slideCarousel()
 }, 10000)
-
-window.onload = () => initServerData(mcip, "25565");
