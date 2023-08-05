@@ -311,6 +311,17 @@ footer p {
     right: 10px;
 }
 
+.watermark {
+    max-width: 20%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.watermark>img {
+    width: 100%;
+}
+
 /* RULES LIST */
 ul.rule-list {
     list-style-type: disc;
