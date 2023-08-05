@@ -39,9 +39,10 @@ function initServerData(serverIp, serverPort) {
             generatePlayerCard(data.players.sample[player].name)
         }
 
-        for (let i = 0; i < 5; i++) {
-            generatePlayerCard("def1de")
-        }
+        // FOR TEST PURPOSE ONLY
+        // for (let i = 0; i < 5; i++) {
+        //     generatePlayerCard("notch")
+        // }
     }
 }
 
@@ -136,4 +137,3 @@ setInterval(() => {
 }, 10000)
 
 window.onload = () => initServerData(mcip, "25565");
-window.onload = () => animateCypher()
