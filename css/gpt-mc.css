@@ -1,5 +1,5 @@
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/index/minecraft.jpg");
     background-attachment: fixed;
@@ -8,7 +8,6 @@ body {
 
 .background {
     background-color: white;
-    width: 100%;
     padding: 20px;
 }
 
@@ -67,7 +66,8 @@ section {
 /* PRICING */
 
 .pricing-table {
-    min-width: 450px;
+    min-width: 300px;
+    width: 30%;
     max-width: 30%;
 }
 
@@ -102,7 +102,7 @@ section {
 
 #titleImg {
     position: absolute;
-    width: 18vw;
+    width: 80%;
     top: -20px;
     z-index: 10;
 }
@@ -167,7 +167,7 @@ footer p {
 }
 
 .info {
-    width: 60%;
+    width: 100%;
 }
 
 /* CAROUSEL */
@@ -208,4 +208,26 @@ footer p {
 
 .carousel-next {
     right: 10px;
+}
+
+/* RULES LIST */
+
+#rules {
+    margin-top: 10px;
+}
+
+.rulesList>li {
+    margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .pricing-table {
+        max-width: 60%;
+        width: 100%;
+    }
 }
