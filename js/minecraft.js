@@ -25,47 +25,55 @@ let counter = 0;
 function initServerData(serverIp, serverPort) {
     fetch('https://mcapi.us/server/status?ip=' + serverIp + '&port=' + serverPort)
         .then(response => response.json())
-        .then(data => handleServerStatus(data));
+        .then(data => handleServerStatus(data))
     function handleServerStatus(data) {
         if (data.status == 'error') {
-            return false;
+            return false
         }
+        console.log(data)
         version.innerHTML = data.server.name;
         if (data.online) { mcstatus.innerText = "Online" }
         players.innerHTML = data.players.now + "/" + data.players.max
         updated.innerHTML = Math.round((Date.now() - data.last_updated * 1000) / 60000) + " min ago"
 
         for (const player in data.players.sample) {
+            console.log(player)
             generatePlayerCard(data.players.sample[player].name)
         }
     }
 }
 
 function generatePlayerCard(username) {
-    let playerCard = document.createElement("div");
-    playerCard.setAttribute("class", "player-card");
+    let playerCard = document.createElement("div")
+    playerCard.setAttribute("class", "player-card")
 
-    let imgSrc = "https://mc-heads.net/avatar/" + username + "/45";
-    let playerIcon = document.createElement("img");
-    playerIcon.setAttribute("src", imgSrc);
+    let playerIconWrapper = document.createElement("div")
+    playerIconWrapper.setAttribute("class", "profile-picture")
 
-    let playerName = document.createElement("h3");
-    playerName.innerText = username;
+    let imgSrc = "https://mc-heads.net/avatar/" + username + "/100"
+    let playerIcon = document.createElement("img")
+    playerIcon.setAttribute("src", imgSrc)
 
-    playerCard.appendChild(playerIcon);
-    playerCard.appendChild(playerName);
+    playerIconWrapper.appendChild(playerIcon)
+
+    let playerName = document.createElement("div")
+    playerName.setAttribute("class", "nickname")
+    playerName.innerText = username
+
+    playerCard.appendChild(playerIconWrapper)
+    playerCard.appendChild(playerName)
 
     // Assuming you have an element with id 'playerList' to append the playerCard to
-    playerList.appendChild(playerCard);
+    playerList.appendChild(playerCard)
 }
 
 function copyToClipboard(str) {
-    const el = document.createElement('textarea');
-    el.value = str;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+    const el = document.createElement('textarea')
+    el.value = str
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
 }
 
 function slideCarousel() {
@@ -90,11 +98,11 @@ blurBg.addEventListener('click', closeBuyModal)
 
 prevButton.addEventListener('click', () => {
     if (counter > 0) {
-        counter--;
+        counter--
     } else {
         counter = 2
     }
-    slideCarousel();
+    slideCarousel()
 });
 
 nextButton.addEventListener('click', () => {
@@ -118,11 +126,11 @@ document.addEventListener("scroll", () => {
 
 setInterval(() => {
     if (counter < carouselImgs) {
-        counter++;
+        counter++
     } else {
-        counter = 0;
+        counter = 0
     }
-    slideCarousel();
+    slideCarousel()
 }, 10000)
 
-// window.onload = () => initServerData(mcip, "25565");
+window.onload = () => initServerData(mcip, "25565");
