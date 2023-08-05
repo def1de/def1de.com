@@ -187,8 +187,14 @@ section {
 
 /* SERVER INFO */
 
+.api-wrapper .container {
+    display: flex;
+    justify-content: center;
+}
+
 .server-info {
     width: 300px;
+    max-width: inherit;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -354,5 +360,16 @@ ul.rule-list>li {
 
     .api-wrapper {
         width: 100%;
+    }
+
+    #buy-trigger-alt {
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+    }
+
+    #buy-trigger-alt.active {
+        top: 10px
     }
 }
