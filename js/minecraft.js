@@ -20,8 +20,6 @@ const buyLater = document.getElementById("buyLater")
 const pricingTable = document.getElementById("pricingTable")
 const blurBg = document.getElementById("blur")
 
-const textToCypher = document.getElementsByClassName("cyper")
-
 let counter = 0;
 
 function initServerData(serverIp, serverPort) {
@@ -138,3 +136,4 @@ setInterval(() => {
 }, 10000)
 
 window.onload = () => initServerData(mcip, "25565");
+window.onload = () => animateCypher()
