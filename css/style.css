@@ -330,14 +330,22 @@ body {
     .socials {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        gap: 30px;
     }
 
     .socials>i {
         font-size: 5rem;
     }
 
+    .socials>i:nth-child(odd),
+    .socials>i:nth-child(even) {
+        animation: none;
+    }
+
     .screen {
         order: -1;
         scale: 0.6;
+        animation: none;
     }
 }
