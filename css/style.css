@@ -15,6 +15,7 @@ body {
     place-items: center;
     background-color: rgb(var(--background-rgb));
     margin: 0rem;
+    overflow-x: hidden;
 }
 
 .row {
