@@ -84,7 +84,7 @@ function copyToClipboard(str) {
 }
 
 function slideCarousel() {
-    carouselSlide.style.transform = `translateX(-${counter * 100}%)`;
+    carouselSlide.style.transform = `translateX(-${counter * 25}%)`;
 }
 
 function openBuyModal() {
@@ -133,11 +133,11 @@ document.addEventListener("scroll", () => {
     }
 })
 
-setInterval(() => {
-    if (counter < carouselImgs) {
-        counter++
-    } else {
-        counter = 0
-    }
-    slideCarousel()
-}, 10000)
+// setInterval(() => {
+//     if (counter < carouselImgs) {
+//         counter++
+//     } else {
+//         counter = 0
+//     }
+//     slideCarousel()
+// }, 10000)
