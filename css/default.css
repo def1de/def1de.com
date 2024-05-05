@@ -11,6 +11,10 @@ br {
     margin-bottom: 10px;
 }
 
+i {
+    font-style: normal;
+}
+
 .btn {
     box-sizing: border-box;
     background-color: transparent;
@@ -33,6 +37,74 @@ br {
     background-color: white;
     color: black;
 }
+
+/* PROGRESS BAR */
+
+.percent
+{
+  width:150px;
+  height:150px;
+  position:relative;
+}
+
+.percent svg
+{
+  width:150px;
+  height:150px;
+  position:relative;
+  transform: rotate(-90deg);
+}
+
+.percent svg circle
+{
+  width:150px;
+  height:150px;
+  fill:none;
+  stroke-width:10;
+  stroke:#000;
+  transform:translate(5px,5px);
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+  stroke-linecap:round;
+}
+
+.percent svg circle:nth-child(1)
+{
+  stroke-dashoffset:0;
+  stroke:var(--overlay);
+}
+
+.percent svg circle:nth-child(2)
+{
+    stroke-dasharray: 440;
+    transition: 1s stroke-dashoffset;
+}
+
+.percent svg circle:nth-child(2).active
+{
+    stroke-dashoffset: var(--percent);
+    stroke:var(--primary);
+}
+
+.percent .num
+{
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    color:var(--primary);
+}
+
+.percent .num h2
+{
+    font-size:3.5rem;
+}
+
+/* ANIMATIONS */
 
 @keyframes fadeIn {
     from {
