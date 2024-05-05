@@ -126,6 +126,7 @@ body {
     background-color: var(--surface);
     border-radius: 15px;
     transition: all .3s ease;
+    font-size: large;
 }
 
 #about-me{
@@ -134,11 +135,6 @@ body {
 
 #my-projects{
     transform: translateX(100%);
-}
-
-.skill-list{
-    max-height: 100%;
-    overflow-y: scroll;
 }
 
 .skill-card{
@@ -158,4 +154,24 @@ body {
 
 .progress-box>.percent{
     scale: 0.8;
+}
+
+.project-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--overlay);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 150px;
+}
+
+.project-card .project-info {
+    width: 50%;
+}
+
+.project-card .btn{
+    width: 100%;
 }

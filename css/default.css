@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 br {
     margin-bottom: 10px;
 }
@@ -96,7 +92,7 @@ i {
     justify-content:center;
     align-items:center;
     position:absolute;
-    color:var(--primary);
+    color:var(--accent);
 }
 
 .percent .num h2

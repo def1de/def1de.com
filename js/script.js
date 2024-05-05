@@ -22,7 +22,8 @@ unloadProgressBar = () => {
     }
 };
 
-about.addEventListener('click', () => {
+about.addEventListener('click', (e) => {
+    e.preventDefault();
     about.classList.add('active');
     projects.classList.remove('active');
     aboutContent.style.transform = 'translateX(-50%)';
@@ -32,7 +33,8 @@ about.addEventListener('click', () => {
     }, 100);
 });
 
-projects.addEventListener('click', () => {
+projects.addEventListener('click', (e) => {
+    e.preventDefault();
     projects.classList.add('active');
     about.classList.remove('active');
     projectsContent.style.transform = 'translateX(-50%)';
