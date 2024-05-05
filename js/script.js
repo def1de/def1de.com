@@ -5,6 +5,7 @@ const projects = document.querySelector('#projects');
 const projectsContent = document.querySelector('#my-projects');
 
 const progressBar = document.getElementsByClassName('progress-bar');
+const slider = document.querySelector('#slider');
 
 window.onload = () => {
     loadProgressBar();
@@ -26,8 +27,11 @@ about.addEventListener('click', (e) => {
     e.preventDefault();
     about.classList.add('active');
     projects.classList.remove('active');
-    aboutContent.style.transform = 'translateX(-50%)';
-    projectsContent.style.transform = 'translateX(100%)';
+
+    aboutContent.classList.add('active');
+    projectsContent.classList.remove('active');
+
+    slider.style.height = aboutContent.clientHeight + 'px';
     setTimeout(() => {
         loadProgressBar();
     }, 100);
@@ -37,8 +41,9 @@ projects.addEventListener('click', (e) => {
     e.preventDefault();
     projects.classList.add('active');
     about.classList.remove('active');
-    projectsContent.style.transform = 'translateX(-50%)';
-    aboutContent.style.transform = 'translateX(100%)';
+
+    projectsContent.classList.add('active');
+    aboutContent.classList.remove('active');
     setTimeout(() => {
         unloadProgressBar();
     }, 500);

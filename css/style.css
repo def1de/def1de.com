@@ -15,9 +15,9 @@ body {
     font-weight: 400;
     font-style: normal;
 
-    overflow-x: hidden;
     background-color: var(--base);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 .side-col{
@@ -115,26 +115,38 @@ body {
 .main{
     position: relative;
     margin-top: 40px;
+    overflow-x: hidden;
+}
+
+#slider{
+    position: relative;
+    width: 100%;
+    height: 90vh;
 }
 
 #about-me, #my-projects{
     width: 90%;
     position: absolute;
-    left: 50%;
-
+    left: 150%;
     padding: 10px;
     background-color: var(--surface);
     border-radius: 15px;
-    transition: all .3s ease;
+    transition: left .3s ease, opacity .3s ease;
     font-size: large;
-}
-
-#about-me{
     transform: translateX(-50%);
 }
 
-#my-projects{
-    transform: translateX(100%);
+#about-me.active, #my-projects.active{
+    left: 50%
+}
+
+.about-me-inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-article{
+    width: 100%;
 }
 
 .skill-card{
@@ -165,7 +177,7 @@ body {
     background-color: var(--overlay);
     border-radius: 5px;
     margin-bottom: 10px;
-    height: 150px;
+    min-height: 150px;
 }
 
 .project-card .project-info {
